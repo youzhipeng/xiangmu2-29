@@ -80,15 +80,15 @@ const serverHandler = () => {
              .pipe(webserver({ // 需要一些配置项
                host: 'localhost', // 域名, 这个域名可以自定义
                port: 8080, // 端口号, 0 ~ 65535, 尽量不适用 0 ~ 1023
-               open: './pages/index.html', // 你默认打开的首页, 从 dist 下面的目录开始书写
+               open: './pages/login.html', // 你默认打开的首页, 从 dist 下面的目录开始书写
                livereload: true, // 自动刷新浏览器 - 热重启
-               // 所有的代理配置都在 proxies 里面
+               // 所有的代理配置都在 proxies 里面y
                proxies: [
                  // 每一个代理配置就是一个对象
                  {
                    source: '/gx', // 源, 你的代理标识符
                    // 你直接请求下面这个地址压根也拿不到东西, 因为跨域了
-                   target: 'http://127.0.0.1/test.php' // 目标, 你要代理的地址
+                   target: 'http://localhost:80/DAY36/list.php' // 目标, 你要代理的地址
                  },
                  {
                    source: '/gx2',
@@ -116,7 +116,7 @@ const watchHandler = () => {
   gulp.watch('./src/pages/*.html', htmlHandler)
   gulp.watch('./src/lib/**', libHandler)
   gulp.watch('./src/images/**', imgHandler)
-  gulp.watch('./src/sass/*.scss', sass)
+  gulp.watch('./src/sass/*.scss', sassHandler)
 }
 
 
@@ -135,6 +135,7 @@ module.exports.default = gulp.series(
   serverHandler,
   watchHandler
 )
+
 
 
 

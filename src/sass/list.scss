@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #f9f9f9;
+}
+#beijing{
+    width: 854px;
+    height: 100%;
+    margin: 0 auto;
+    background: white;
+    margin-top: 20px;
+    >.box1{
+        width: 786px;
+        height: 100%;
+        margin: 0 auto;
+        // background: red;
+        >img{
+            width: 49px;
+            height: 48px;
+            display: block;
+            margin: 0 auto;
+        
+        }
+        >h4{
+            margin-top:30px; 
+            font-size: 30px;
+            margin-left:310px; 
+            font-weight: 500;
+        }
+    }
+    >.box2{
+        width: 786px;
+        height:100%;
+        // background: green;
+        margin: 0 auto;
+        padding-top: 20px;
+        >form{
+            width: 332px;
+            // border: 1px red solid;
+            margin: 0 auto;
+        >input{
+            width: 328px;
+            height: 40px;
+            margin: 5px 0;
+            outline: none;
+         
+        }
+        >label.error{
+            color: red;
+            font-size: 14px;
+        }
+        >button{
+            background: orange;
+            width: 332px;
+            height: 40px;
+            border: none;
+            margin-top: 15px;
+        }
+        }
+
+        >p{
+            width: 260px;
+            font-size: 14px;
+            padding: 40px 0 20px 0;
+            margin:0 auto;
+            color: #9d9d9d;
+            a{
+                font-weight: 800;
+                text-decoration: none;
+                color: #333;
+            }
+        }
+    }
+
+}
+.ziti{
+    width:300px;
+    height: 20px;
+    margin: 0 auto;
+    padding: 10px 0 5px 0;
+    >ul li{
+        list-style: none;
+        float: left;
+        border-right: 1px #ccc solid;
+        padding:0 10px;
+    
+        >a{
+            text-decoration: none;
+            color: #9d9d9d;
+            font-size:14px;
+        }
+    }
+}
+.banquan{
+    width: 580px;
+    height: 20px;
+    font-size: 14px;
+    color: #9d9d9d;
+    padding: 10px 0;
+    margin: 0 auto;
+}
