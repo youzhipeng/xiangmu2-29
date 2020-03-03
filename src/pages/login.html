@@ -15,32 +15,74 @@
     </div>
     <div id="beijing">
         <div class="tu">
-            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7f25f8c94bac0a8bfb3c6a3e30e5b7dd.jpg" alt="">
+            <img src="" alt="">
         </div>
         <div class="dengru"><!--登入-->
-            <div class="head">
                 <ul>
-                    <li><a href=""></a>账号登入</li>
-                    <li><a href=""></a>扫码登入</li>
+                    <li><a href="" style="color: #f56600">账号登入</a></li>
+                    <span>|</span>
+                    <li><a href="">扫码登入</a></li>
                 </ul>
-                <form action="">
-                        <input type="text" name="username">
-                        <input type="text" name="password">
+                <div class="dr"><!--等入大盒子-->
+                    <form action="" class="login">
+                        <input type="text" placeholder="邮箱/手机号小米ID" name="username" id="user"><br>
+                        <input type="text" placeholder="密码" name="password" id="pass"><br>
                         <button>登入</button>
                 </form>
                 <div class="shouji">
-                        <p>手机短信/注册</p>
-                </div>
-                <div class="mima">
+                        <a href="">手机短信/注册</a>
                     <ul>
-                        <li>立即注册</li>
-                        <li>忘记密码？</li>
+                        <li><a href="">立即注册</a> </li>
+                        <span>|</span>
+                        <li><a href="">忘记密码？</a> </li>
                     </ul>
                 </div>
-
-        
-            </div>
+                <div class="box">
+                    <p>请用其他方式登入</p>
+                </div>
+                </div>
         </div>
+
+    </div>
+    <div id="foot">
+            <ul>
+                <li><a href="">简体</a></li>
+                <li><a href="">繁体</a></li>
+                <li><a href="">English</a></li>
+                <li><a href="">常见问题</a></li>
+                <li><a href="">隐私政策</a></li>
+            </ul>
+        </div>
+    <div class="foot2">
+        <p>小米公司版权所有-京ICP备10046444- <img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png" alt=""> 京公网安备11010802020134号-京ICP证110507号</p>
     </div>
 </body>
 </html>
+<script src="../lib/jquery/dist/jquery.min.js"></script>
+<script src="../lib/jquery-validate/jquery.validate.min.js"></script>
+<script src="../lib/jquery-validate/localization/messages_zh.min.js"></script>
+<script>
+    $('.login').validate({
+        rules:{
+            password:{
+                required:true,
+            }
+        },
+        messages:{
+            password:'账号或密码格式有误',
+        },
+        submitHandler:function(form){
+            $.post('/gx2', $(form).serialize(), res => {
+          console.log(res)
+          if(res.code===1){
+              window.location.href='http://localhost:8080/pages/index.html';
+          }else{
+              alert('用户名或密码错误');
+          }
+            },'json')
+        }
+
+    })
+
+
+</script>

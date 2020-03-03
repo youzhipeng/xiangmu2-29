@@ -18,11 +18,11 @@
             <!-- <div class="box3"> -->
                     <form action="" id="login">
                         手机号码<br>
-                       <input type="text" name="number" id="number" value=""><br>
+                       <input type="text" name="number" id="number" placeholder="请输入手机号码"><br>
                        用户名<br>
-                        <input type="text" name="username" id="username" value=""><br>
+                        <input type="text" name="username" id="username" placeholder="填写用户名"><br>
                         密码<br>
-                        <input type="text" name="password" id="password" value=""><br>
+                        <input type="text" name="password" id="password" placeholder="输入密码"><br>
                         <button>立即注册</button>
                     </form>
                     <p>已阅读并同意：小米<a href="">用户协议</a>和<a href="">隐私政策</a></p>
@@ -74,6 +74,11 @@
         submitHandler: function (form) {
             $.post('/gx', $(form).serialize(), res => {
           console.log(res)
+          if(res.code===1){
+            window.location.href = 'http://localhost:8080/pages/login.html';
+          }else{
+              alert('你已注册，请直接登入')
+          }
         }, 'json')
       }
 
