@@ -93,7 +93,11 @@ const serverHandler = () => {
                  {
                    source: '/gx2',
                    target: 'http://localhost:80/DAY36/login.php'
-                 }
+                 },
+                //  {
+                //    source:'/gx3',
+                //    target:'https://api2.order.mi.com/flashsale/getslideshow'
+                //  }
                ]
              })) // 开启服务器
 }

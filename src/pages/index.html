@@ -7,7 +7,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="../sass/index.css">
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1668839_k4zr0iszo8.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1668839_obqe0njlc8c.css">
   <link rel="stylesheet" href="../lib/swiper/css/swiper.min.css"><!--swiper-->
   <style>
   </style>
@@ -107,40 +107,46 @@
 <!-- 下拉菜单 -->
 <div class="xl">
   <ul>
-    <li>
+    <!-- <li>
       <div>
         <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b0f790442e629d548f65a3f3902b7d0a.png?thumb=1&w=50&h=50&f=webp&q=90" alt="">
       </div>
       <p>腾讯黑鲨鱼手机</p>
-    </li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
-    <li>太难l</li>
+    </li> -->
   </ul>
 </div>
 </div>
-
 </div>
+<!-- 轮播图下的内容 -->
+<div id="neirong">
+  <div class="neirong1">
+    <div class="neirong2">
+      <ul>
+        <li><i class="iconfont icon-shizhong"></i><a href="">小米秒杀</a></li>
+        <li><i class="iconfont icon-xtubiao-"></i><a href="">企业团购</a></li>
+        <li><i class="iconfont icon-shizhong"></i><a href="">F码通道</a></li>
+        <li><i class="iconfont icon-shizhong"></i><a href="">迷粉卡</a></li>
+        <li><i class="iconfont icon-shizhong"></i><a href="">以旧换新</a></li>
+        <li><i class="iconfont icon-huafei2"></i><a href="">话费充值</a></li>
+      </ul>
+    </div>
+ 
+  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7bc54a61b927dd8c54ddd39a0acf0254.jpg?w=632&h=340" alt="">
+  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/94c74e01afe50a86c3a87ff030b85781.jpg?w=632&h=340" alt="">
+  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/816a66edef10673b4768128b41804cae.jpg?w=632&h=340" alt="">
+</div>
+</div>
+<!-- 小米闪够 -->
+<div id="sangou">
+  <div class="sangou">
+    <p>小米闪购</p>
+    <ul class="pagination">
+        <li class=""><span aria-hidden="true">&laquo;</span></a></li>
+        <li class=""><span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </div>
+</div>
+    </nav>
   <script src="../lib/jquery/dist/jquery.min.js"></script>
   <script src="../js/index.js"></script>
   <script src="../lib/swiper/js/swiper.min.js"></script><!--swiper-->
@@ -152,7 +158,7 @@
       url:'../lib/nav_top.json',
       dataType:'json',
       success:function(res){
-        console.log(res);
+        // console.log(res);
 
         // 准备一个空字符串
         var str=""
@@ -160,7 +166,7 @@
         res.forEach(item =>{
            str +=`<li>${item.name}</li>`
         })
-        // 填充到pull2里面的tl里
+        // 填充到pull2里面的ul里
         $('.pull4>ul').html(str)
         .on({
             mouseenter: () => $('.nav_box').stop().slideDown(),
@@ -221,6 +227,47 @@
     //   el: '.swiper-scrollbar',
     // },
   })  
+  // _____________________轮播图下拉菜单_________________
+  getList2()
+  function getList2(){
+    $.ajax({
+      url:'../lib/text.json',
+      dataType:'json',
+      success:function(res){
+        // console.log(res)
+
+        $(".main2>ul>li").on('mouseenter',function(){
+          var index=$(this).index()
+          var list1=res[index].list
+          // console.log(list1)
+          // 准备一个空数组
+      var str=""
+      // 渲染到xl下的ul里面
+      list1.forEach(item =>{
+        str+=`
+        <li>
+       <div>
+        <img src="${item.list_url}" alt="">
+      </div>
+      <p>${item.list_name}</p>
+     </li> 
+        `
+      })
+      // 填充
+      $('.xl>ul').html(str)
+      $('.xl')
+         .on({
+           mouseenter:function () {$(this).finish().show()},
+           mouseleave:function () {$(this).finish().slideUp()}
+         })
+        })
+             .on({
+              mouseenter:() => $('.xl').stop().show(),
+              mouseleave:() => $('.xl').stop().hide()
+      })
+      }
+    })
+  }
   </script>
 </body>
 </html>
