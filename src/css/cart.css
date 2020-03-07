@@ -1,0 +1,8 @@
+.pagi{
+    width: 1226px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>Document</title><link rel=stylesheet href=../sass/exzoom.css><style>#exzoom{width:400px;margin:20px auto}</style></head><body><div class=exzoom id=exzoom><div class=exzoom_img_box><ul class=exzoom_img_ul><li><img src=https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1563243759.11976150.jpg></li><li><img src=https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2c16238f786e4f93bdb175d7bf21aa47.jpg></li><li><img src=https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2c16238f786e4f93bdb175d7bf21aa47.jpg></li><li><img src=https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2c16238f786e4f93bdb175d7bf21aa47.jpg></li><li><img src=https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2c16238f786e4f93bdb175d7bf21aa47.jpg></li><li><img src=https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2c16238f786e4f93bdb175d7bf21aa47.jpg></li><li><img src=https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2c16238f786e4f93bdb175d7bf21aa47.jpg></li><li><img src=https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2c16238f786e4f93bdb175d7bf21aa47.jpg></li></ul></div><div class=exzoom_nav></div><p class=exzoom_btn><a href=javascript:void(0); class=exzoom_prev_btn>&lt;</a> <a href=javascript:void(0); class=exzoom_next_btn>&gt;</a></p></div><div id=xaingxi><div class=xiangxi1><h4>详细信息</h4><h5>1亿像素的手机，雷军最牛逼集散地副驾驶飞机</h5><p>小米自营</p><span>8899元</span><div class=banben><p>选择版本</p><ul><li><a href="">8G+128G</a>1888元</li><li><a href="">8G+128G</a>1888元</li><li><a href="">8G+128G</a>1888元</li><li><a href="">8G+128G</a>1888元</li></ul><p>选择颜色</p><ol><li>深海围观</li><li>姨妈色</li><li>狗狗绿</li></ol></div><div class=zongjia><ul><li>华为poro30</li><li>999元</li></ul><h3>总计：9000元</h3></div><div class=btn><button class=addCart>添加购物车</button></div></div></div><script src=../lib/jquery-1.11.0.min.js type=text/javascript></script><script src=../lib/jquery.exzoom.js></script><script>$("#exzoom").exzoom();
+        defaults = {
+            "navWidth": 60,//列表每个宽度,该版本中请把宽高填写成一样
+            "navHeight": 60,//列表每个高度,该版本中请把宽高填写成一样
+            "navItemNum": 5,//列表显示个数
+            "navItemMargin": 7,//列表间隔
+            "navBorder": 1,//列表边框，没有边框填写0，边框在css中修改
+            "autoPlay": true,//是否自动播放
+            "autoPlayTimeout": 2000,//播放间隔时间
+        };
+        var info = JSON.parse(localStorage.getItem('goodsInfo'))
+        console.log(info)
+        // if(!info){
+        //     alert('你要查询的数据不存在')
+        //     window.location.href='./cart.html'
+        // }
+        bindHtml()
+        function bindHtml() {
+            $('.exzoom_img_ul img').attr('src', info.icon)
+        }
+        //         var str = ""
+        //         //    info.forEach(item =>{
+        //         str += `
+        //    <li><img src="${info.icon}"></li>
+        //     <li><img src="${info.image}"></li>
+        //    <li><img src="${info.image}"></li>
+        //    `
+        //         //    })
+        //         $('.exzoom_img_ul').html(str)
+        //     }
+        //     bindHtml2()
+        //     function bindHtml2() {
+        //         var str = ""
+        //         //    info.forEach(item =>{
+        //         str += `
+        //    <span style="margin-left: 7px; width: 60px; height: 60px;">
+        //    <img src="${info.icon}" alt="">
+        // </span>
+        //    `
+        //         //    })
+        //         $('.exzoom_nav_inner').html(str)
+
+        //     }
+        // 详细渲染
+        bindHtml3()
+        function bindHtml3() {
+            var str = ""
+            str += `
+                <h4>${info.name}</h4>
+                <h5>${info.desc}</h5>
+                <p>小米自营</p>
+                <span>${info.market_price}</span>
+                <div class="banben">
+                    <p>选择版本</p>
+                    <ul>
+
+                        <li><a href="">8G+128G</a>1888元</li>
+                        <li><a href="">8G+128G</a>1888元</li>
+                        <li><a href="">8G+128G</a>1888元</li>
+                        <li><a href="">8G+128G</a>1888元</li>
+                    </ul>
+                    <p>选择颜色</p>
+                    <ol>
+                        <li>深海围观</li>
+                        <li>姨妈色</li>
+                        <li>狗狗绿</li>
+                    </ol>
+
+                </div>
+                <div class="zongjia">
+                    <ul>
+                        <li>${info.name}</li>
+                        <li>${info.market_price}元</li>
+                    </ul>
+                    <h3>总计：${info.market_price}</h3>
+                </div>
+                <div class="btn">
+                    <button class="addCart">添加购物车</button>
+                  </div>
+           `
+            $('.xiangxi1').html(str)
+        }
+        $('.addCart').click(() => {
+            // console.log('你好')
+            // 判断是否登入，登入cookie里面有标识符
+            var cartList = JSON.parse(localStorage.getItem('cartList')) || []
+            // console.log(cartList)
+
+            let exits = cartList.some(item => {
+                return item.product_id === info.product_id
+            })
+            console.log(exits)
+            if (exits) {
+                // console.log('num++')
+                let data = null
+                for (let i = 0; i < cartList.length; i++) {
+                    if (cartList[i].product_id === info.product_id) {
+                        data = cartList[i]
+                        break
+                    }
+                }
+                data.number++
+                data.xiaoji = data.number * data.price // 数量 * 单价
+            } else {
+                info.number = 1
+                info.xiaoji = info.price; ///小计
+                info.isSelect = false;//默认不选中
+                cartList.push(info)
+
+            }
+
+            localStorage.setItem('cartList', JSON.stringify(cartList))
+        })</script></body></html>

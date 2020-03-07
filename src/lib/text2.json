@@ -1,0 +1,52 @@
+[
+
+          {
+            "list_id": 1,
+            "list_name": "小米10 pro",
+            "list_price": 4999,
+            "list_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+          },
+          {
+            "list_id": 2,
+            "list_name": "小米10",
+            "list_price": 3,
+            "list_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+          },
+          {
+            "list_id": 4,
+            "list_name": "小米CC9 pro",
+            "list_price": 2599,
+            "list_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+          },
+          {
+            "list_id": 5,
+            "list_name": "小米9 pro 5G",
+            "list_price": 3699,
+            "list_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+          },
+          {
+            "list_id": 6,
+            "list_name": "小米CC9",
+            "list_price": 1499,
+            "list_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+          },
+          {
+            "list_id": 7,
+            "list_name": "小米CC9e",
+            "list_price": 1299,
+            "list_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+          },
+          {
+            "list_id": 7,
+            "list_name": "小米CC9e",
+            "list_price": 1299,
+            "list_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+          },
+          {
+            "list_id": 8,
+            "list_name": "小米CC9e",
+            "list_price": 1299,
+            "list_url": "//cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=250&h=250&f=webp&q=90"
+          }
+
+]
