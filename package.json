@@ -33,6 +33,6 @@
     "bootstrap": "^3.3.7",
     "bootstrap-waterfall": "^0.2.4",
     "jquery": "^3.4.1",
-    "swiper": "^5.3.1"
+    "swiper": "^6.5.1"
   }
 }
